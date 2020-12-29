@@ -150,7 +150,6 @@ def main(epoch, save_path, load_path, samples, data_file_path, batch_size):
 		for data in data_loader:
 			optimizer.zero_grad()
 			data = torch.stack(data[0]) # list of Tensor로 구성되어 있기 때문에 list를 stack을 통해 변환해준다.
-			# 여기 계속 data[0]으로 해도 괜찮은지 확인하기
 			data = data.transpose(1,0)
 			data = data.to(ctx) # 해당 tensor를 GPU에 loading
 			model = model.to(ctx) 
@@ -167,7 +166,7 @@ def main(epoch, save_path, load_path, samples, data_file_path, batch_size):
 				summary.add_scalar('loss/loss', loss, count)
 
 			# generator 진행
-			if (count > 0 and count % 10000 == 0) or (len(data) < batch_size):
+			if (count > 0 and count % 1000 == 0) or (len(data) < batch_size):
 				sent = sample_sequence(model.to("cpu"), tok, vocab, sent="우리", text_size=100, temperature=0.7, top_p=0.8, top_k=40)
 				sent = sent.replace("<unused0>", "\n") # 비효율적이지만 엔터를 위해서 등장
 				sent = auto_enter(sent)
@@ -184,7 +183,7 @@ def main(epoch, save_path, load_path, samples, data_file_path, batch_size):
 			#########################################
 			count += 1
 
-			if (count > 0 and count % 20000 == 0) or (len(data) < batch_size):
+			if (count > 0 and count % 10000 == 0) or (len(data) < batch_size):
 				# 모델 저장
 				try:
 					torch.save({
