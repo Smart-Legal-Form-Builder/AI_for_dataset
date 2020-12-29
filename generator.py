@@ -21,7 +21,7 @@ parser.add_argument('--loops', type=int, default=-1,
 					help="글을 몇 번 반복할지 지정합니다. -1은 무한반복입니다.")
 parser.add_argument('--tmp_sent', type=str, default="사랑",
 					help="글의 시작 문장입니다.")
-parser.add_argument('--load_path', type=str, default="./checkpoint/KoGPT2_checkpoint_80000.tar",
+parser.add_argument('--load_path', type=str, default="./checkpoint/KoGPT2_checkpoint_240000.tar",
 					help="학습된 결과물을 저장하는 경로입니다.")
 
 args = parser.parse_args()
@@ -112,7 +112,10 @@ def main(temperature = 0.7, top_p = 0.8, top_k = 40, tmp_sent = "", text_size = 
 		print(sent)
 
 		now = [int(n) for n in os.listdir("./samples")]
-		now = max(now)
+		if len(now)==0:
+			now=0
+		else:
+			now = max(now)
 		f = open("samples/" + str(now + 1), 'w', encoding="utf-8")
 		head = [load_path, tmp_sent, text_size, temperature, top_p, top_k]
 		head = [str(h) for h in head]
@@ -126,7 +129,7 @@ def main(temperature = 0.7, top_p = 0.8, top_k = 40, tmp_sent = "", text_size = 
 		if num != 0:
 			num += 1
 			if num >= loops:
-				#print("good")
+				print("good")
 				return
 
 if __name__ == "__main__":
