@@ -18,7 +18,7 @@ generator_ngram_creativity.ipynb
 
 ### Korean Bert Score
 ```sh
-git clone https://github.com/lovit/KoBERTScore
+git clone https://github.com/lovit/KoBERTScore.git
 cd ko-BERTScore
 python setup.py install
 ```
