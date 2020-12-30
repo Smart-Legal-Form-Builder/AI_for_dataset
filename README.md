@@ -13,3 +13,10 @@ python generator.py --temperature=1.0 --text_size=100 --load_path=./checkpoint/K
 ```
 or<br>
 generator_ngram_creativity.ipynb
+
+
+### Korean Bert Score
+
+git clone https://github.com/lovit/KoBERTScore
+cd ko-BERTScore
+python setup.py install
