@@ -14,6 +14,7 @@ python generator.py --temperature=1.0 --text_size=100 --load_path=./checkpoint/K
 or<br>
 generator_ngram_creativity.ipynb
 
+--------
 
 ### Korean Bert Score
 ```sh
