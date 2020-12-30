@@ -11,3 +11,8 @@ python main.py --epoch=200 --data_file_path=./train.csv --save_path=./checkpoint
 ```sh
 python generator.py --temperature=1.0 --text_size=100 --load_path=./checkpoint/KoGPT2_checkpoint_240000.tar --tmp_sent="우리는 지난"
 ```
+
+### Koraen Bert Score
+git clone https://github.com/lovit/KoBERTScore
+cd ko-BERTScore
+python setup.py install
