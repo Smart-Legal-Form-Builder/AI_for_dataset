@@ -12,11 +12,13 @@ download trained model [here](https://drive.google.com/file/d/1UHC9fCE8pU15iacOp
 python generator.py --temperature=1.0 --text_size=100 --load_path=./checkpoint/KoGPT2_checkpoint_240000.tar --tmp_sent="우리는 지난"
 ```
 or<br>
-generator_ngram_creativity.ipynb
+`generator_ngram_creativity.ipynb`
 
 --------
 
 ### Koraen Bert Score
+```sh
 git clone https://github.com/lovit/KoBERTScore
 cd ko-BERTScore
 python setup.py install
+```
