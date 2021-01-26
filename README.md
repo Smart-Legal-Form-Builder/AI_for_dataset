@@ -16,7 +16,7 @@ or<br>
 
 --------
 
-### Koraen Bert Score
+### Korean Bert Score
 ```sh
 git clone https://github.com/lovit/KoBERTScore
 cd ko-BERTScore
