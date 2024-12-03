@@ -54,7 +54,7 @@ class Read_Dataset(Dataset):
 		print("data read: --------OK-------")
 		datasets = []
 		for _, row in df.iterrows():
-			datasets.append([row["lyrics"], row["genre"], row["score"]])
+			datasets.append([row["statement"], row["type"], row["score"]])
 			
 		print("tokenizer ending")
 		for line in datasets:

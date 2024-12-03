@@ -24,7 +24,7 @@ parser.add_argument('--load_path', type=str, default='./checkpoint/Alls/KoGPT2_c
 					help="학습된 결과를 불러오는 경로입니다.")
 parser.add_argument('--samples', type=str, default="samples/",
 					help="생성 결과를 저장할 경로입니다.")
-parser.add_argument('--data_file_path', type=str, default='./short-story.csv',
+parser.add_argument('--data_file_path', type=str, default='./dataset.csv',
 					help="학습할 데이터를 불러오는 경로입니다.")
 parser.add_argument('--batch_size', type=int, default=8,
 					help="batch_size 를 지정합니다.")
